@@ -80,6 +80,10 @@ function confirmation() {
         }, 1000);
     })
     return promise;
+
+    // We can also wrrite this function like this (if thre is no reject case):
+    // ...........................
+    // const promise = Promise.resolve("Your order is confirmed. You will receive the book soon!!!") ......
 }
 
 // Calling or executing the promises
