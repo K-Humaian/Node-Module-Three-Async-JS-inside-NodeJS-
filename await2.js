@@ -75,6 +75,14 @@ function confirmation() {
     return promise;
 }
 
+function pfetch() {
+    const promise = new Promise((resolve, reject) => {
+
+        resolve(fetch('https://jsonplaceholder.typicode.com/todos/1'));
+    })
+    return promise;
+}
+
 async function orderbook() {
 
     try {
@@ -83,7 +91,11 @@ async function orderbook() {
         await makePayment();
 
         const message = await confirmation();
+
         console.log(message);
+
+        const response = await pfetch();
+        console.log('Fetch Response:', response);
     }
 
     catch (err) {
